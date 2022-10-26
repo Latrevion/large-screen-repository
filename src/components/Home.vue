@@ -1,6 +1,6 @@
 <template>
     <div>
-        你好
+        你好a1
     </div>
 </template>
 <script>
