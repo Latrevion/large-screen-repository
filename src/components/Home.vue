@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="x" :style="{backgroundImage:`url(${imgUrl})`}"></div>
+        <header class="x" :style="{backgroundImage:`url(${imgUrl})`}"></header>
     </div>
 </template>
 <script>
@@ -19,6 +19,5 @@ export default {
 .x {
     background-size: cover;
     height: px(99);
-    // border: 1px solid gold;
 }
 </style>
