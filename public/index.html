@@ -11,7 +11,7 @@
       //主要内容页面宽度pageWidth  clientWidth浏览器设备宽度  clientHeight浏览器设备高度
       const clientWidth = document.documentElement.clientWidth
       const clientHeight = document.documentElement.clientHeight
-      const pageWidth = clientWidth / clientHeight > 16 / 9?  clientHeight * (16 / 9): clientWidth
+      window.pageWidth = clientWidth / clientHeight > 16 / 9?  clientHeight * (16 / 9): clientWidth
       
       const pageHeight = pageWidth / (16 / 9)
 
@@ -24,7 +24,6 @@
   <body>
     <div id="app"></div>
     <script type="module">
-
       const root = document.querySelector('#app')
       root.style.width  = pageWidth + 'px'
       root.style.height = pageHeight + 'px'
