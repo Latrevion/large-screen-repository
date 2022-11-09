@@ -6,7 +6,9 @@
                 <Chart1 />
                 <Chart2 />
             </section>
-            <section class="bordered section2"></section>
+            <section class="section2">
+                <Chart3 />
+            </section>
             <section class="bordered section3"></section>
             <section class="bordered section4"></section>
             <section class="bordered section5"></section>
@@ -19,6 +21,7 @@
 <script>
 import Chart1 from './chart-1.vue'
 import Chart2 from './chart-2.vue'
+import Chart3 from './chart-3.vue'
 export default {
     computed: {
         year() {
@@ -31,7 +34,7 @@ export default {
             imgUrl: require("../assets/images/headerBg.png")
         };
     },
-    components: { Chart1, Chart2 }
+    components: { Chart1, Chart2,Chart3 }
 }
 </script>
 <style lang="scss" scoped>
