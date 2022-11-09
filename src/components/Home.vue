@@ -11,12 +11,20 @@
             <section class="bordered section4"></section>
             <section class="bordered section5"></section>
         </main>
+        <footer>
+            &copy; Latrevion 2019-{{year}}
+        </footer>
     </div>
 </template>
 <script>
 import Chart1 from './chart-1.vue'
 import Chart2 from './chart-2.vue'
 export default {
+    computed: {
+        year() {
+            return new Date().getFullYear()
+        }
+    },
     name: "Home",
     data() {
         return {
@@ -40,10 +48,25 @@ export default {
     >.header {
         background-size: cover;
         height: px(99);
+        width: px(2420);
+        margin: 0 auto;
+    }
+
+    >footer {
+        height: px(68);
+        border: 1px solid #0d2d59;
+        margin: px(20) 0px 1px;
+        border-radius: 4px;
+        background: #0c0d2b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     >.main {
-        padding-top: 30px;
+        width: px(2420);
+        margin: 0 auto;
+        padding-top: px(30);
         flex: 1;
         display: grid;
         grid-template:
