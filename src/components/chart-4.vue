@@ -1,7 +1,7 @@
 <template>
-    <div class="bordered 发案趋势">
-        <h2>发案趋势分析</h2>
-        <div class="chart3"></div>
+    <div class="bordered 案发时段">
+        <h2>案发时段分析</h2>
+        <div class="chart4"></div>
     </div>
 </template>
 <script>
@@ -13,7 +13,7 @@ export default {
     },
     methods: {
         initChart() {
-            var myChart = echarts.init(document.querySelector('.chart3'));
+            var myChart = echarts.init(document.querySelector('.chart4'));
             // 绘制图表
             myChart.setOption({
                 textStyle: {
@@ -21,23 +21,17 @@ export default {
                     color: '#79839e'
                 },
                 title: { show: false },
-                legend: {
-                    bottom: px(10),
-                    textStyle: { color: 'white' },
-                    itemWidth: px(30),
-                    itemHeight: px(16)
-                },
                 grid: {
                     x: px(20),
                     x2: px(20),
                     y: px(20),
-                    y2: px(70),
+                    y2: px(20),
                     containLabel: true
                 },
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
-                    data: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
+                    data: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
                     splitLine: { show: true, lineStyle: { color: '#073E78' } },
                     axisTick: { show: false },
                     axisLine: { show: false },
@@ -55,50 +49,31 @@ export default {
                         }
                     }
                 },
-                series: [
-                    {
-                        name: '抢劫',
-                        type: 'line',
-                        data: [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09].reverse(),
-                        symbol: 'circle',
-                        symbolSize: px(12),
-                        lineStyle: { width: px(2) }
-                    },
-                    {
-                        name: '醉驾',
-                        type: 'line',
-                        data: [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10].reverse(),
-                        symbol: 'circle',
-                        symbolSize: px(12),
-                        lineStyle: { width: px(2) }
-                    },
-                    {
-                        name: '盗窃',
-                        type: 'line',
-                        data: [0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11].reverse(),
-                        symbol: 'circle',
-                        symbolSize: px(12),
-                        lineStyle: { width: px(2) }
-                    },
-                    {
-                        name: '故意杀人',
-                        type: 'line',
-                        data: [0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11, 0.12].reverse(),
-                        symbol: 'circle',
-                        symbolSize: px(12),
-                        lineStyle: { width: px(2) }
-                    },
-                    {
-                        name: '故意伤人',
-                        type: 'line',
-                        data: [0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11, 0.12, 0.13].reverse(),
-                        symbol: 'circle',
-                        symbolSize: px(12),
-                        lineStyle: { width: px(2) }
+                series: [{
+                    name: '故意伤人',
+                    type: 'line',
+                    data: [
+                        0.15, 0.13, 0.11,
+                        0.13, 0.14, 0.15,
+                        0.16, 0.18, 0.21,
+                        0.19, 0.17, 0.16,
+                        0.15
+                    ],
+                    symbol: 'circle',
+                    symbolSize: px(12),
+                    lineStyle: { width: px(2) },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: '#414a9f'
+                        }, {
+                            offset: 1,
+                            color: '#1b1d52'
+                        }]),
                     }
-                ]
+                }]
             }
-            );
+            )
         }
     }
 }
@@ -136,7 +111,7 @@ export default {
 }
 
 
-.发案趋势 {
+.案发时段 {
     height: px(363);
     display: flex;
     flex-direction: column;
@@ -153,7 +128,7 @@ export default {
         text-shadow: 0 0 px(3) white;
     }
 
-    .chart3 {
+    .chart4 {
         flex: 1;
         width: 100%;
     }

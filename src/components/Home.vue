@@ -8,13 +8,14 @@
             </section>
             <section class="section2">
                 <Chart3 />
+                <Chart4 />
             </section>
             <section class="bordered section3"></section>
             <section class="bordered section4"></section>
             <section class="bordered section5"></section>
         </main>
         <footer>
-            &copy; Latrevion 2019-{{year}}
+            &copy; Latrevion 2019-{{ year }}
         </footer>
     </div>
 </template>
@@ -22,6 +23,7 @@
 import Chart1 from './chart-1.vue'
 import Chart2 from './chart-2.vue'
 import Chart3 from './chart-3.vue'
+import Chart4 from './chart-4.vue'
 export default {
     computed: {
         year() {
@@ -34,7 +36,7 @@ export default {
             imgUrl: require("../assets/images/headerBg.png")
         };
     },
-    components: { Chart1, Chart2,Chart3 }
+    components: { Chart1, Chart2, Chart3, Chart4 }
 }
 </script>
 <style lang="scss" scoped>
@@ -119,6 +121,9 @@ export default {
 
         >.section2 {
             grid-area: box2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         >.section3 {
