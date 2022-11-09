@@ -3,7 +3,8 @@
         <header class="header" :style="{ backgroundImage: `url(${imgUrl})` }"></header>
         <main class="main">
             <section class="section1">
-                <Chart1/>
+                <Chart1 />
+                <Chart2 />
             </section>
             <section class="bordered section2"></section>
             <section class="bordered section3"></section>
@@ -14,6 +15,7 @@
 </template>
 <script>
 import Chart1 from './chart-1.vue'
+import Chart2 from './chart-2.vue'
 export default {
     name: "Home",
     data() {
@@ -21,7 +23,7 @@ export default {
             imgUrl: require("../assets/images/headerBg.png")
         };
     },
-    components: { Chart1 }
+    components: { Chart1, Chart2 }
 }
 </script>
 <style lang="scss" scoped>
@@ -29,11 +31,11 @@ export default {
 
 .home {
     flex: 1;
-    height: 100%;
     display: flex;
     flex-direction: column;
     background-color: #010310;
     color: white;
+    font-size: px(16);
 
     >.header {
         background-size: cover;
@@ -84,11 +86,13 @@ export default {
 
         >.section1 {
             grid-area: box1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         >.section2 {
             grid-area: box2;
-
         }
 
         >.section3 {

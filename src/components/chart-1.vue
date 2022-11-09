@@ -23,6 +23,9 @@ export default {
                 title: { show: false },
                 legend: { show: false },
                 xAxis: {
+                    axisLabel: {
+                        fontSize: px(12)
+                    },
                     data: ['兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区'],
                     axisTick: { show: false },
                     axisLabel: {
@@ -38,13 +41,13 @@ export default {
                     },
                 },
                 grid: {
-                    x: px(40),
-                    y: px(40),
-                    x2: px(40),
-                    y2: px(40)
+                    x: px(20),
+                    y: px(20),
+                    x2: px(20),
+                    y2: px(20),
+                    containLabel: true
                 },
                 yAxis: {
-
                     splitLine: { show: false },
                     axisLine: {
                         show: true,
@@ -71,6 +74,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../views/_helper.scss";
+
 .bordered {
     border: 1px solid #0764bc;
     border-radius: 4px;
@@ -100,7 +104,7 @@ export default {
 }
 
 
- .管辖统计 {
+.管辖统计 {
     height: px(315);
     display: flex;
     flex-direction: column;
