@@ -5,6 +5,8 @@
 </div>
 </template>
 <script>
+import * as echarts from 'echarts'
+import chinaGeo from '../geo/chinaGeo.json'
 const px = (n) => { return n / 2420 * pageWidth }
 export default {
 
