@@ -10,8 +10,12 @@
                 <Chart3 />
                 <Chart4 />
             </section>
-            <section class="bordered section3"></section>
-            <section class="bordered section4"></section>
+            <section class="bordered section3">
+                <Chart5 />
+            </section>
+            <section class="section4">
+                <Chart6 />
+            </section>
             <section class="bordered section5"></section>
         </main>
         <footer>
@@ -24,6 +28,8 @@ import Chart1 from './chart-1.vue'
 import Chart2 from './chart-2.vue'
 import Chart3 from './chart-3.vue'
 import Chart4 from './chart-4.vue'
+import Chart5 from './chart-5.vue'
+import Chart6 from './chart-6.vue'
 export default {
     computed: {
         year() {
@@ -36,7 +42,7 @@ export default {
             imgUrl: require("../assets/images/headerBg.png")
         };
     },
-    components: { Chart1, Chart2, Chart3, Chart4 }
+    components: { Chart1, Chart2, Chart3, Chart4 ,Chart5 ,Chart6 }
 }
 </script>
 <style lang="scss" scoped>
@@ -89,7 +95,7 @@ export default {
             border-radius: 4px;
             position: relative;
             box-shadow: 0 0 2px 0 #0f3361, inset 0 0 2px 0 #0f3361;
-            background-color: #0c1139;
+            background-color: #0f113a;
 
             &::before {
                 content: "";
