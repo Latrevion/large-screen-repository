@@ -10,7 +10,7 @@
                 <Chart3 />
                 <Chart4 />
             </section>
-            <section class="bordered section3">
+            <section class=" section3">
                 <Chart5 />
             </section>
             <section class="section4">
@@ -42,7 +42,7 @@ export default {
             imgUrl: require("../assets/images/headerBg.png")
         };
     },
-    components: { Chart1, Chart2, Chart3, Chart4 ,Chart5 ,Chart6 }
+    components: { Chart1, Chart2, Chart3, Chart4, Chart5, Chart6 }
 }
 </script>
 <style lang="scss" scoped>
@@ -66,7 +66,7 @@ export default {
     >footer {
         height: px(68);
         border: 1px solid #0d2d59;
-        margin: px(20) 0px 1px;
+        margin: px(20) 0 px(1);
         border-radius: 4px;
         background: #0c0d2b;
         display: flex;

@@ -1,5 +1,5 @@
 <template>
- <div class="战果">
+ <div  class=" bordered 战果">
       <h2>往年战果数对比</h2>
       <table>
         <thead>
@@ -23,20 +23,41 @@
     </div>
 </template>
 <script>
-
-const px = (n) => { return n / 2420 * pageWidth }
-export default {
-   
-}
-
 </script>
 <style lang="scss" scoped>
 @import "../views/_helper.scss";
 
+.bordered {
+    border: 1px solid #0764bc;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 0 2px 0 #0f3361, inset 0 0 2px 0 #0f3361;
+    background-color: #0c1139;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        border-radius: 4px;
+        box-shadow:
+            21px 0 0 -20px #0f3361,
+            -21px 0 0 -20px #0f3361,
+            0 21px 0 -20px #0f3361,
+            0 -21px 0 -20px #0f3361,
+            11px 0 0 -10px #0d4483,
+            -11px 0 0 -10px #0d4483,
+            0 11px 0 -10px #0d4483,
+            0 -11px 0 -10px #0d4483,
+        ;
+    }
+}
 
 
 .战果 {
-    height: px(363);
+    height: px(362);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,9 +72,8 @@ export default {
         padding: px(10) px(28);
         text-shadow: 0 0 px(3) white;
     }
-}
 
-.战果 {
+
       > table {
         margin-top: px(38);
         border-collapse: collapse;
