@@ -13,7 +13,6 @@ export default{
 <style lang="scss" scoped>
      .年龄段-图3{
         flex: 1;
-        border: 1px solid skyblue;
         display: flex; 
         flex-direction: column;
       }
