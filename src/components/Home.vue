@@ -15,6 +15,14 @@
             </section>
             <section class="section4">
                 <Chart6 />
+                <div class="bordered 年龄段">
+                    <h2>犯罪人员年龄段分布</h2>
+                    <div class="charts">
+                        <Chart7 />
+                        <Chart8 />
+                        <Chart9 />
+                    </div>
+                </div>
             </section>
             <section class="bordered section5"></section>
         </main>
@@ -30,6 +38,9 @@ import Chart3 from './chart-3.vue'
 import Chart4 from './chart-4.vue'
 import Chart5 from './chart-5.vue'
 import Chart6 from './chart-6.vue'
+import Chart7 from './chart-7.vue'
+import Chart8 from './chart-8.vue'
+import Chart9 from './chart-9.vue'
 export default {
     computed: {
         year() {
@@ -42,7 +53,7 @@ export default {
             imgUrl: require("../assets/images/headerBg.png")
         };
     },
-    components: { Chart1, Chart2, Chart3, Chart4, Chart5, Chart6 }
+    components: { Chart1, Chart2, Chart3, Chart4, Chart5, Chart6, Chart7, Chart8, Chart9 }
 }
 </script>
 <style lang="scss" scoped>
@@ -139,11 +150,39 @@ export default {
 
         >.section4 {
             grid-area: box4;
-
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         >.section5 {
             grid-area: box5;
+        }
+
+        .年龄段 {
+            height: px(363);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2 {
+                flex-shrink: 0;
+                border: 1px solid #0a5299;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                font-size: px(22);
+                line-height: px(24);
+                padding: px(10) px(28);
+                text-shadow: 0 0 px(3) white;
+            }
+
+            >.charts {
+                width: 100%;
+                flex: 1;
+                border: 1px solid skyblue;
+                display: flex;
+                padding: px(30);
+            }
         }
     }
 }
