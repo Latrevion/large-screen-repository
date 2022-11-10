@@ -179,7 +179,6 @@ export default {
             >.charts {
                 width: 100%;
                 flex: 1;
-                border: 1px solid skyblue;
                 display: flex;
                 padding: px(30);
             }
