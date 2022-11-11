@@ -8,7 +8,6 @@ const px = (n) => { return n / 2420 * pageWidth }
 export default {
   data() {
     return {
-      colors
     }
   },
   mounted() {
@@ -33,46 +32,45 @@ export default {
           containLabel: true
         },
         xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: [0, 18, 28, 38, 48, 58, 68, 78],
-          splitLine: { show: true, lineStyle: { color: '#073E78' } },
+          data: ['入室抢劫', '当街偷盗', '团伙诈骗', '刑事案件', '民事案件'],
           axisTick: { show: false },
-          axisLine: { show: false },
-          axisLabel: {
-            fontSize: px(12),
-          }
-        },
-        yAxis: {
-          type: 'value',
-          splitLine: { lineStyle: { color: '#073E78' } },
+          axisLine: {
+            lineStyle: { color: '#083B70' }
+          },
           axisLabel: {
             fontSize: px(12),
             formatter(val) {
-              return val * 100 + '%';
+              if (val.length > 2) {
+                const array = val.split('');
+                array.splice(2, 0, '\n');
+                return array.join('');
+              } else {
+                return val;
+              }
             }
+          },
+        },
+        yAxis: {
+          splitLine: { show: false },
+          axisLabel: {
+            fontSize: px(12),
+          },
+          axisLine: {
+            show: true,
+            lineStyle: { color: '#083B70' }
           }
         },
         legend: { show: false },
         series: [{
-          type: 'line',
-          data: [
-            0.19, 0.20, 0.26,
-            0.35, 0.26, 0.20,
-            0.08, 0.06
-          ],
-          symbol: 'circle',
-          symbolSize: px(12),
-          lineStyle: { width: px(2) },
-          areaStyle: {
-            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-              offset: 0,
-              color: '#F7A110'
-            }, {
-              offset: 1,
-              color: '#1B1D52'
-            }]),
-          }
+          type: 'bar',
+          data: [40, 22, 20, 18, 32],
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: '#0A97FB'
+          }, {
+            offset: 1,
+            color: '#1E34FA'
+          }]),
         }]
       })
     }
@@ -82,22 +80,9 @@ export default {
 <style lang="scss" scoped>
 @import '../views/_helper.scss';
 
-.年龄段-图3 {
-  flex: 1;
+.chart10 {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  border: 1px solid #08397d;
-
-  h3 {
-    font-size: px(20);
-    color: #7ab6db;
-    margin-top: px(6);
-  }
-
-  .chart10 {
-    position: relative;
-    display: flex;
-    flex: 1;
-  }
+  flex: 1;
 }
 </style>
