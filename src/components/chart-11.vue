@@ -42,6 +42,7 @@ export default {
           y2: px(20),
           containLabel: true
         },
+        xAxis: {show: false},
         yAxis: {
           show: false,
         },
