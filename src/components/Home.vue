@@ -28,19 +28,20 @@
                 <div class="bordered row1 案发类型">
                     <h2>案发类型统计</h2>
                     <div class="charts">
-                        <Chart10/>
-                        <Chart11/>
+                        <Chart10 />
+                        <Chart11 />
                     </div>
                 </div>
                 <div class="bordered row2 案发街道">
                     <h2>案发街道统计</h2>
                     <div class="charts12To13">
-                        <Chart12/>
-                        <Chart13/>
+                        <Chart12 />
+                        <Chart13 />
                     </div>
                 </div>
                 <div class="bordered row3 作案手段">
                     <h2>作案手段分析</h2>
+                    <Chart14 />
                 </div>
             </section>
         </main>
@@ -63,6 +64,7 @@ import Chart10 from './chart-10.vue'
 import Chart11 from './chart-11.vue'
 import Chart12 from './chart-12.vue'
 import Chart13 from './chart-13.vue'
+import Chart14 from './chart-14.vue'
 export default {
     computed: {
         year() {
@@ -75,7 +77,10 @@ export default {
             imgUrl: require("../assets/images/headerBg.png")
         };
     },
-    components: { Chart1, Chart2, Chart3, Chart4, Chart5, Chart6, Chart7, Chart8, Chart9,Chart10 ,Chart11,Chart12,Chart13}
+    components: {
+        Chart1, Chart2, Chart3, Chart4, Chart5,
+        Chart6, Chart7, Chart8, Chart9, Chart10, Chart11, Chart12, Chart13, Chart14
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -129,7 +134,8 @@ export default {
             position: relative;
             box-shadow: 0 0 2px 0 #0f3361, inset 0 0 2px 0 #0f3361;
             background-color: #0f113a;
-            &.籍贯{
+
+            &.籍贯 {
                 background-color: #030310;
             }
 
@@ -197,10 +203,18 @@ export default {
 
             >.row3 {
                 height: px(455);
+
+                &.作案手段 {
+                    padding: 0 px(24);
+
+                }
             }
         }
 
-        .年龄段, .案发类型, .案发街道, .作案手段{
+        .年龄段,
+        .案发类型,
+        .案发街道,
+        .作案手段 {
             height: px(363);
             display: flex;
             flex-direction: column;
@@ -223,6 +237,7 @@ export default {
                 display: flex;
                 padding: px(30);
             }
+
             >.charts12To13 {
                 width: 100%;
                 flex: 1;

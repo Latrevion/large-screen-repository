@@ -124,7 +124,6 @@
         width: px(84);
         background: #1c2456;
       }
-
     }
   }
 }
