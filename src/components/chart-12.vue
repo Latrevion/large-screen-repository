@@ -8,7 +8,6 @@
 <script>
 import * as echarts from 'echarts';
 const px = (n) => { return n / 2420 * pageWidth }
-const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA']
 const data = [
   { value: 0.08, name: '东岗路' },
   { value: 0.06, name: '段家滩' },
@@ -23,7 +22,7 @@ const data = [
 export default {
   data() {
     return {
-      colors, data
+      data
     }
   },
   mounted() {
@@ -34,7 +33,6 @@ export default {
       var myChart = echarts.init(document.querySelector('.chart12'));
       // 绘制图表
       myChart.setOption({
-        color: colors,
         textStyle: {
           fontSize: px(12),
           color: '#79839e'
@@ -102,6 +100,8 @@ export default {
     >.chart12 {
       flex: 1;
       width: 100%;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

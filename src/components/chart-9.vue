@@ -11,7 +11,7 @@ const px = (n) => { return n / 2420 * pageWidth }
 export default {
   data() {
     return {
-      colors
+  
     }
   },
   mounted() {
