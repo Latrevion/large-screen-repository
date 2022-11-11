@@ -24,7 +24,23 @@
                     </div>
                 </div>
             </section>
-            <section class="bordered section5"></section>
+            <section class=" section5">
+                <div class="bordered row1 案发类型">
+                    <h2>案发类型统计</h2>
+                    <div class="charts">
+
+                    </div>
+                </div>
+                <div class="bordered row2 案发街道">
+                    <h2>案发街道统计</h2>
+                    <div class="charts">
+
+                    </div>
+                </div>
+                <div class="bordered row3 作案手段">
+                    <h2>作案手段分析</h2>
+                </div>
+            </section>
         </main>
         <footer>
             &copy; Latrevion 2019-{{ year }}
@@ -158,9 +174,24 @@ export default {
 
         >.section5 {
             grid-area: box5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            >.row1 {
+                height: px(317);
+            }
+
+            >.row2 {
+                height: px(317);
+            }
+
+            >.row3 {
+                height: px(455);
+            }
         }
 
-        .年龄段 {
+        .年龄段, .案发类型, .案发街道, .作案手段{
             height: px(363);
             display: flex;
             flex-direction: column;
