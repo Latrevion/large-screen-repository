@@ -23,9 +23,9 @@ const colors = {
 }
 export default {
     data() {
-        return{
+        return {
             colors
-        } 
+        }
     },
     mounted() {
         this.initChart()
@@ -118,9 +118,11 @@ export default {
     border-radius: 4px;
     position: relative;
     box-shadow: 0 0 2px 0 #0f3361, inset 0 0 2px 0 #0f3361;
-    background-color: #0c1139;
+    // background-color: #0c1139;
+    background-color: #020310;
 
     &::before {
+        pointer-events: none;
         content: "";
         position: absolute;
         left: 0;
@@ -143,6 +145,7 @@ export default {
 
 .籍贯 {
     height: px(750);
+    background: #020310;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -159,10 +162,6 @@ export default {
         text-shadow: 0 0 px(3) white;
     }
 
-    .chart6 {
-        flex: 1;
-        width: 100%;
-    }
 
     >.wrapper {
         position: relative;
@@ -170,8 +169,12 @@ export default {
         flex: 1;
         display: flex;
         flex-direction: column;
+        background: #020310;
 
-
+        .chart6 {
+            flex: 1;
+            width: 100%;
+        }
 
         .legend {
             position: absolute;

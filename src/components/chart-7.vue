@@ -75,13 +75,15 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: column;
+    border: 1px solid #08397d;
 
     .legend {
         height: px(40);
         display: flex;
         align-items: center;
         justify-content: center;
-
+        flex-wrap: wrap;
+        // padding-right: px(10);
         >span {
             display: inline-block;
             width: px(40);
