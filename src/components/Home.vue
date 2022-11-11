@@ -124,6 +124,9 @@ export default {
             position: relative;
             box-shadow: 0 0 2px 0 #0f3361, inset 0 0 2px 0 #0f3361;
             background-color: #0f113a;
+            &.籍贯{
+                background-color: #030310;
+            }
 
             &::before {
                 pointer-events: none;

@@ -113,13 +113,12 @@ export default {
 <style lang="scss" scoped>
 @import "../views/_helper.scss";
 
-.bordered {
+.bordered.籍贯 {
     border: 1px solid #0764bc;
     border-radius: 4px;
     position: relative;
     box-shadow: 0 0 2px 0 #0f3361, inset 0 0 2px 0 #0f3361;
-    // background-color: #0c1139;
-    background-color: #020310;
+    background-color: #0c1139;
 
     &::before {
         pointer-events: none;
@@ -146,7 +145,6 @@ export default {
 .籍贯 {
     height: px(750);
     background: #020310;
-    background: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -185,6 +183,32 @@ export default {
             font-size: px(22);
             padding: px(20) px(10) px(20) 0;
             border-radius: 0;
+
+            &.bordered {
+                background-color: #0f113a;
+                border: 1px solid #0764bc;
+                border-radius: 4px;
+                &::before {
+                    pointer-events: none;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    top: 0;
+                    right: 0;
+                    border-radius: 4px;
+                    box-shadow:
+                        21px 0 0 -20px #0f3361,
+                        -21px 0 0 -20px #0f3361,
+                        0 21px 0 -20px #0f3361,
+                        0 -21px 0 -20px #0f3361,
+                        11px 0 0 -10px #0d4483,
+                        -11px 0 0 -10px #0d4483,
+                        0 11px 0 -10px #0d4483,
+                        0 -11px 0 -10px #0d4483,
+                    ;
+                }
+            }
 
             .icon {
                 margin: 0 px(10);
