@@ -109,6 +109,7 @@ export default {
             background-color: #0f113a;
 
             &::before {
+                pointer-events: none;
                 content: "";
                 position: absolute;
                 left: 0;
