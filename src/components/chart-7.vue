@@ -83,7 +83,6 @@ export default {
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        // padding-right: px(10);
         >span {
             display: inline-block;
             width: px(40);
