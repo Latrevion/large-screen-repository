@@ -28,7 +28,7 @@
                 <div class="bordered row1 案发类型">
                     <h2>案发类型统计</h2>
                     <div class="charts">
-
+                        <Chart10/>
                     </div>
                 </div>
                 <div class="bordered row2 案发街道">
@@ -57,6 +57,7 @@ import Chart6 from './chart-6.vue'
 import Chart7 from './chart-7.vue'
 import Chart8 from './chart-8.vue'
 import Chart9 from './chart-9.vue'
+import Chart10 from './chart-10.vue'
 export default {
     computed: {
         year() {
@@ -69,7 +70,7 @@ export default {
             imgUrl: require("../assets/images/headerBg.png")
         };
     },
-    components: { Chart1, Chart2, Chart3, Chart4, Chart5, Chart6, Chart7, Chart8, Chart9 }
+    components: { Chart1, Chart2, Chart3, Chart4, Chart5, Chart6, Chart7, Chart8, Chart9,Chart10 }
 }
 </script>
 <style lang="scss" scoped>
