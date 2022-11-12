@@ -240,7 +240,7 @@ export default {
         position: absolute;
         bottom: 0;
         left: 0;
-        padding: 5px 10px;
+        padding: px(5) px(10);
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 1;
         color: #6e6ab1;

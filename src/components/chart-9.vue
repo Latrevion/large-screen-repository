@@ -58,10 +58,11 @@ export default {
         },
         legend: { show: false },
         series: [{
+          color:'#92ee8c',
           type: 'line',
           data: [
-            0.19, 0.20, 0.26,
-            0.35, 0.26, 0.20,
+            0.15, 0.16, 0.26,
+            0.32, 0.26, 0.23,
             0.08, 0.06
           ],
           symbol: 'circle',
@@ -70,10 +71,11 @@ export default {
           areaStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
               offset: 0,
-              color: '#F7A110'
+              color:'#b7de83',
             }, {
               offset: 1,
-              color: '#1B1D52'
+              color: '#75b17f',
+              color: 'rgba(183,222,131,0.5)'
             }]),
           }
         }]
