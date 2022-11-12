@@ -1,7 +1,11 @@
 <template>
     <div class="bordered 籍贯">
         <h2>全国犯罪人员籍贯分布地</h2>
-        <span class="time">{{time}}</span>
+
+        <span class='text'>实时监控中</span>
+        <div class="radar"></div>
+
+        <span class="time">{{ time }}</span>
         <div class="wrapper">
             <div class="chart6" />
             <div class="legend bordered">
@@ -26,7 +30,7 @@ export default {
     data() {
         return {
             colors,
-            time:new Date().toLocaleString(),
+            time: new Date().toLocaleString(),
         }
     },
     mounted() {
@@ -149,18 +153,101 @@ export default {
         ;
     }
 
-    .time{
+    // 扫描图
+    .text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: px(5) px(20);
+        font-size: px(16);
+        color: #fff;
+    }
+
+    .radar {
+        background: -webkit-radial-gradient(center,
+                #0a5299 0%,
+                rgba(32, 255, 77, 0) 75%),
+            -webkit-repeating-radial-gradient(rgba(32, 255, 77, 0) 5.8%, rgba(32,
+                    255,
+                    77,
+                    0) 18%, #0a5299 18.6%, rgba(32, 255, 77, 0) 18.9%),
+            -webkit-linear-gradient(90deg, rgba(32, 255, 77, 0) 49.5%, #0a5299 50%, rgba(32,
+                    255,
+                    77,
+                    0) 50.2%),
+            -webkit-linear-gradient(0deg, rgba(32, 255, 77, 0) 49.5%, #0a5299 50%, rgba(32,
+                    255,
+                    77,
+                    0) 50.2%);
+        width: px(80);
+        height: px(80);
+        max-height: px(80);
+        max-width: px(80);
+        position: absolute;
+        right: px(20);
+        top: px(35);
+        z-index: 2;
+        /* 元素居中定位 */
+        transform: translate (-50%, -50%);
+        border-radius: 50%;
+        border: px(2) solid #0a5299;
+        overflow: hidden;
+    }
+
+    .radar:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: blips 5s infinite;
+        animation-timing-function: linear;
+        animation-delay: 1.4s;
+    }
+
+    .radar:after {
+        content: " ";
+        display: block;
+        background-image: linear-gradient(44deg,
+                rgba(0, 255, 51, 0) 50%,
+                #0a5299 100%);
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: radar-beam 5s infinite;
+        /* 速度相同 */
+        animation-timing-function: linear;
+        transform-origin: bottom right;
+        border-radius: 100% 0 0 0;
+    }
+
+    @keyframes radar-beam {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    // 扫描图  the end
+
+    .time {
         position: absolute;
         bottom: 0;
         left: 0;
         padding: 5px 10px;
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0, 0, 0, 0.5);
         z-index: 1;
         color: #6e6ab1;
         font-size: px(22);
     }
 }
- 
+
 
 
 
@@ -210,6 +297,7 @@ export default {
                 background-color: #0f113a;
                 border: 1px solid #0764bc;
                 border-radius: 4px;
+
                 &::before {
                     pointer-events: none;
                     content: "";
