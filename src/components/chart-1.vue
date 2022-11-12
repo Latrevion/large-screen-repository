@@ -8,11 +8,44 @@
 import * as echarts from 'echarts'
 const px = (n) => { return n / 2420 * pageWidth }
 export default {
+    data() {
+        return {
+            newData: [],
+            data: [
+                { name: '广东省', value: 10, },
+                { name: '广西省', value: 20, },
+                { name: '浙江省', value: 36, },
+                { name: '福建省', value: 41, },
+                { name: '山东省', value: 15, },
+                { name: '山西省', value: 26, },
+                { name: '四川省', value: 37, },
+                { name: '河南省', value: 18, },
+                { name: '湖南省', value: 29 }
+            ]
+        }
+    },
     mounted() {
-        this.initChart()
+        this.initChart(this.data),
+            this.timer = setInterval(() => {
+                this.newData = [
+                    { name: '广东省', value: Math.random() * 30 + 10 },
+                    { name: '广西省', value: Math.random() * 2 + 20 },
+                    { name: '浙江省', value: Math.random() * 3 + 35 },
+                    { name: '福建省', value: Math.random() * 5 + 41 },
+                    { name: '山东省', value: Math.random() * 8 + 15 },
+                    { name: '山西省', value: Math.random() * 5 + 26 },
+                    { name: '四川省', value: Math.random() * 3 + 37 },
+                    { name: '河南省', value: Math.random() * 10 + 18 },
+                    { name: '湖南省', value: Math.random() * 3 + 29 }
+                ],
+                    this.initChart(this.newData)
+            }, 3000)
+    },
+    beforeDestroy() {
+        clearInterval(this.timer)
     },
     methods: {
-        initChart() {
+        initChart(data) {
             var myChart = echarts.init(document.querySelector('.chart'));
             // 绘制图表
             myChart.setOption({
@@ -26,7 +59,7 @@ export default {
                     axisLabel: {
                         fontSize: px(12)
                     },
-                    data: ['广东省', '广西省', '浙江省', '福建省', '山东省', '山西省', '四川省', '河南省', '湖南省'],
+                    data: data.map(item => item.name),
                     axisTick: { show: false },
                     axisLabel: {
                         fontSize: px(12),
@@ -63,7 +96,7 @@ export default {
                     {
                         name: '数量',
                         type: 'bar',
-                        data: [10, 20, 36, 41, 15, 26, 37, 18, 29],
+                        data: data.map(item => item.value),
                         itemStyle: {
                             normal: {
                                 color: new echarts.graphic.LinearGradient(
