@@ -1,12 +1,13 @@
 <template>
     <div class="bordered 籍贯">
-        <h2>全市犯罪人员籍贯分布地</h2>
+        <h2>全国犯罪人员籍贯分布地</h2>
+        <span class="time">{{time}}</span>
         <div class="wrapper">
             <div class="chart6" />
             <div class="legend bordered">
-                <span class="icon" :style="{ background: colors['甘肃省'] }" />甘岭籍
+                <span class="icon" :style="{ background: colors['湖南省'] }" />长沙籍
                 <span class="icon" :style="{ background: colors['四川省'] }" />边城籍
-                <span class="icon" :style="{ background: colors['青海省'] }" />寒国籍
+                <span class="icon" :style="{ background: colors['广东省'] }" />广州籍
             </div>
             <div class="notes">此地图仅显示了中国的部分区域</div>
         </div>
@@ -17,18 +18,25 @@ import * as echarts from 'echarts'
 import chinaGeo from '../geo/chinaGeo.json'
 const px = (n) => { return n / 2420 * pageWidth }
 const colors = {
-    '甘肃省': '#BB31F7',
+    '湖南省': '#BB31F7',
     '四川省': '#15B8FD',
-    '青海省': '#06E1EE'
+    '广东省': '#06E1EE',
 }
 export default {
     data() {
         return {
-            colors
+            colors,
+            time:new Date().toLocaleString(),
         }
     },
     mounted() {
         this.initChart()
+        this.timer = setInterval(() => {
+            this.time = new Date().toLocaleString()
+        }, 1000)
+    },
+    beforeDestroy() {
+        clearInterval(this.timer)
     },
     methods: {
         initChart() {
@@ -57,12 +65,12 @@ export default {
                         type: 'map',
                         mapType: 'CN', // 自定义扩展图表类型
                         data: [
-                            { name: '甘肃省', value: 1 },
+                            { name: '湖南省', value: 10 },
                         ],
                         label: { show: false, color: 'white' },
                         itemStyle: {
                             areaColor: '#010D3D',
-                            color: colors['甘肃省'],
+                            color: colors['湖南省'],
                             borderColor: '#9bb9dd',
                             emphasis: {
                                 label: { color: 'white' },
@@ -90,11 +98,11 @@ export default {
                         type: 'map',
                         mapType: 'CN', // 自定义扩展图表类型
                         data: [
-                            { name: '青海省', value: 100 },
+                            { name: '广东省', value: 100 },
                         ],
                         itemStyle: {
                             areaColor: '#9bb9dd',
-                            color: colors['青海省'],
+                            color: colors['广东省'],
                             borderColor: '#01A7F7',
                             emphasis: {
                                 label: { color: 'white' },
@@ -140,7 +148,21 @@ export default {
             0 -11px 0 -10px #0d4483,
         ;
     }
+
+    .time{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 5px 10px;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1;
+        color: #6e6ab1;
+        font-size: px(22);
+    }
 }
+ 
+
+
 
 .籍贯 {
     height: px(750);
