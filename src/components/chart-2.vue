@@ -94,10 +94,10 @@ export default {
                         itemStyle: {
                             normal: {
                                 color: new echarts.graphic.LinearGradient(
-                                    0, 0, 1, 0,
+                                    0, 0, 0, 1,
                                     [
-                                        { offset: 0, color: '#2034f9' },
-                                        { offset: 1, color: '#04a1ff' }
+                                        { offset: 0, color: '#04a1ff' },
+                                        { offset: 1, color: '#2034f9' },
                                     ]
                                 )
                             }
@@ -110,10 +110,10 @@ export default {
                         itemStyle: {
                             normal: {
                                 color: new echarts.graphic.LinearGradient(
-                                    0, 0, 1, 0,
+                                    0, 0, 0, 1,
                                     [
-                                        { offset: 0, color: '#b92ae8' },
-                                        { offset: 1, color: '#6773e7' }
+                                        { offset: 1, color: '#b92ae8' },
+                                        { offset: 0, color: '#6773e7' }
                                     ]
                                 )
                             }
