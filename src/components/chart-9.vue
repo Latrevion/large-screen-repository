@@ -11,14 +11,41 @@ const px = (n) => { return n / 2420 * pageWidth }
 export default {
   data() {
     return {
-  
+      newData: [],
+      data: [
+        { value: 0.15 },
+        { value: 0.18 },
+        { value: 0.26 },
+        { value: 0.32 },
+        { value: 0.26 },
+        { value: 0.23 },
+        { value: 0.23 },
+        { value: 0.20 }
+      ]
     }
   },
   mounted() {
-    this.initChart()
+    this.initChart(this.data)
+    this.timer = setInterval(() => {
+      this.newData = [
+        { value: Math.random() * 0.03.toFixed(2) + 0.15 },
+        { value: Math.random() * 0.03.toFixed(2)+ 0.18 },
+        { value: Math.random() * 0.03.toFixed(2) + 0.26 },
+        { value: Math.random() * 0.03.toFixed(2) + 0.32 },
+        { value: Math.random() * 0.03.toFixed(2) + 0.26},
+        { value: Math.random() * 0.03.toFixed(2) + 0.26 },
+        { value: Math.random() * 0.03.toFixed(2)+ 0.23 },
+        { value: Math.random() * 0.03.toFixed(2)+ 0.20 }
+      ]
+      this.data = this.newData
+      this.initChart(this.data)
+    }, 3000)
+  },
+  beforeDestroy() {
+    clearInterval(this.timer)
   },
   methods: {
-    initChart() {
+    initChart(data) {
       var myChart = echarts.init(document.querySelector('.chart9'));
       // 绘制图表
       myChart.setOption({
@@ -58,20 +85,16 @@ export default {
         },
         legend: { show: false },
         series: [{
-          color:'#92ee8c',
+          color: '#92ee8c',
           type: 'line',
-          data: [
-            0.15, 0.16, 0.26,
-            0.32, 0.26, 0.23,
-            0.08, 0.06
-          ],
+          data:  data.map(i => i.value),
           symbol: 'circle',
           symbolSize: px(12),
           lineStyle: { width: px(2) },
           areaStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
               offset: 0,
-              color:'#b7de83',
+              color: '#b7de83',
             }, {
               offset: 1,
               color: '#75b17f',

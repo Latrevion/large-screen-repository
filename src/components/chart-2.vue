@@ -45,7 +45,7 @@ export default {
             ]
             this.data = this.newData
             this.initChart(this.data)
-        }, 2000)
+        }, 3000)
     },
     beforeDestroy() {
         clearInterval(this.timer)
