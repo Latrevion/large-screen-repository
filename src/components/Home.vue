@@ -28,8 +28,8 @@
                 <div class="bordered row1 案发类型">
                     <h2>案发类型统计</h2>
                     <div class="charts">
-                        <Chart10 />
                         <Chart11 />
+                        <Chart10 />
                     </div>
                 </div>
                 <div class="bordered row2 案发街道">
