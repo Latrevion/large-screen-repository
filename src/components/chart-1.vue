@@ -26,7 +26,7 @@ export default {
                     axisLabel: {
                         fontSize: px(12)
                     },
-                    data: ['兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区'],
+                    data: ['广东省', '广西省', '浙江省', '福建省', '山东省', '山西省', '四川省', '河南省', '湖南省'],
                     axisTick: { show: false },
                     axisLabel: {
                         fontSize: px(12),
@@ -61,9 +61,20 @@ export default {
                 },
                 series: [
                     {
-                        name: '销量',
+                        name: '数量',
                         type: 'bar',
                         data: [10, 20, 36, 41, 15, 26, 37, 18, 29],
+                        itemStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(
+                                    0, 0, 1, 0,
+                                    [
+                                        { offset: 1, color: '#2034f9' },
+                                        { offset: 0, color: '#04a1ff' }
+                                    ]
+                                )
+                            }
+                        },
                     }
                 ]
             });

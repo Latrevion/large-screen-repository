@@ -79,13 +79,13 @@ export default {
         series: [{
           type: 'bar',
           data: data.map(i => i.value),
-          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-            offset: 0,
-            color: '#0A97FB'
-          }, {
-            offset: 1,
-            color: '#1E34FA'
-          }]),
+          color: new echarts.graphic.LinearGradient(
+            0, 0, 1, 0,
+            [
+              { offset: 1, color: '#2034f9' },
+              { offset: 0, color: '#04a1ff' }
+            ]
+          )
         }]
       })
     }
