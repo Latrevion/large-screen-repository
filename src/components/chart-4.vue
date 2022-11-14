@@ -8,11 +8,48 @@
 import * as echarts from 'echarts'
 const px = (n) => { return n / 2420 * pageWidth }
 export default {
+    data: function () {
+        return {
+            data: [
+                { value: 0.15 },
+                { value: 0.13 },
+                { value: 0.11 },
+                { value: 0.13 },
+                { value: 0.14 },
+                { value: 0.15 },
+                { value: 0.16 },
+                { value: 0.18 },
+                { value: 0.21 },
+                { value: 0.19 },
+                { value: 0.17 },
+                { value: 0.16 },
+                { value: 0.15 }
+            ]
+        }
+    },
     mounted() {
-        this.initChart()
+        this.initChart(this.data)
+        this.timer = setInterval(( )=>{ 
+            this.data = [
+                { value: Math.random()*0.1 +0.15 },
+                { value: Math.random()*0.1 +0.13 },
+                { value: Math.random()*0.1 +0.11 },
+                { value:Math.random()*0.1 + 0.13 },
+                { value: Math.random()*0.1 +0.14 },
+                { value: Math.random()*0.1 +0.15 },
+                { value: 0.16 },
+                { value: 0.18 },
+                { value: 0.21 },
+                { value: 0.19 },
+                { value: 0.17 },
+                { value:Math.random()*0.1 + 0.16 },
+                { value: Math.random()*0.1 +0.15 }
+            ]
+            this.initChart(this.data)
+        },3000)
     },
     methods: {
-        initChart() {
+        initChart(data) {
             var myChart = echarts.init(document.querySelector('.chart4'));
             // 绘制图表
             myChart.setOption({
@@ -51,13 +88,7 @@ export default {
                 },
                 series: [{
                     type: 'line',
-                    data: [
-                        0.15, 0.13, 0.11,
-                        0.13, 0.14, 0.15,
-                        0.16, 0.18, 0.21,
-                        0.19, 0.17, 0.16,
-                        0.15
-                    ],
+                    data: data.map(item => item.value),
                     symbol: 'circle',
                     symbolSize: px(12),
                     lineStyle: { width: px(2) },
