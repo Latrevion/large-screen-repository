@@ -68,10 +68,10 @@ export default {
               shadowColor: 'rgba(0, 0, 0, 0.5)'
             },
             data: [
-              { value: 0.36, name: '刑事案件' },
-              { value: 0.20, name: '民事案件' },
-              { value: 0.18, name: '经济案件' },
-              { value: 0.24, name: '其他案件' },
+              { value: 0.31, name: '刑事案件' },
+              { value: 0.23, name: '民事案件' },
+              { value: 0.19, name: '经济案件' },
+              { value: 0.27, name: '其他案件' },
             ]
           }
         ]
