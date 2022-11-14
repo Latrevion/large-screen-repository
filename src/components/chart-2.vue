@@ -1,5 +1,5 @@
 <template>
-    <div class="bordered  破获排名">
+    <div class="bordered  case-solving-ranking">
         <h2>案件破获排名</h2>
         <div class="chart2"></div>
         <div class="legend">
@@ -160,7 +160,7 @@ export default {
 }
 
 
-.破获排名 {
+.case-solving-ranking {
     height: px(423);
     display: flex;
     flex-direction: column;

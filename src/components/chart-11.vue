@@ -1,5 +1,5 @@
 <template>
-  <div class="案发类型统计-图2">
+  <div class="streetOfCrime-img2">
     <div class="main">
       <div class="chart11" />
     </div>
@@ -83,7 +83,7 @@ export default {
 <style lang="scss" scoped>
 @import '../views/_helper.scss';
 
-.案发类型统计-图2 {
+.streetOfCrime-img2 {
   flex: 1;
   display: flex;
   flex-direction: column;

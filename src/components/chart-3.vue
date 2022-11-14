@@ -1,5 +1,5 @@
 <template>
-    <div class="bordered 发案趋势">
+    <div class="bordered trendOfCases">
         <h2>发案趋势分析</h2>
         <div class="chart3"></div>
     </div>
@@ -137,7 +137,7 @@ export default {
 }
 
 
-.发案趋势 {
+.trendOfCases {
     height: px(363);
     display: flex;
     flex-direction: column;

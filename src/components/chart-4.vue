@@ -1,5 +1,5 @@
 <template>
-    <div class="bordered 案发时段">
+    <div class="bordered timeOfCrime">
         <h2>案发时段分析</h2>
         <div class="chart4"></div>
     </div>
@@ -145,7 +145,7 @@ export default {
 }
 
 
-.案发时段 {
+.timeOfCrime {
     height: px(363);
     display: flex;
     flex-direction: column;

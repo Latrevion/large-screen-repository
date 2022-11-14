@@ -15,7 +15,7 @@
             </section>
             <section class="section4">
                 <Chart6 />
-                <div class="bordered 年龄段">
+                <div class="bordered ageGroup">
                     <h2>犯罪人员年龄段分布</h2>
                     <div class="charts">
                         <Chart7 />
@@ -25,21 +25,21 @@
                 </div>
             </section>
             <section class=" section5">
-                <div class="bordered row1 案发类型">
+                <div class="bordered row1 typeOfIncident">
                     <h2>案发类型统计</h2>
                     <div class="charts">
                         <Chart11 />
                         <Chart10 />
                     </div>
                 </div>
-                <div class="bordered row2 案发街道">
+                <div class="bordered row2 streetOfCrime">
                     <h2>案发街道统计</h2>
                     <div class="charts12To13">
                         <Chart12 />
                         <Chart13 />
                     </div>
                 </div>
-                <div class="bordered row3 作案手段">
+                <div class="bordered row3 MeansOfCrime">
                     <h2>作案手段分析</h2>
                     <Chart14 />
                 </div>
@@ -135,7 +135,7 @@ export default {
             box-shadow: 0 0 2px 0 #0f3361, inset 0 0 2px 0 #0f3361;
             background-color: #0f113a;
 
-            &.籍贯 {
+            &.native-place {
                 background-color: #030310;
             }
 
@@ -204,17 +204,17 @@ export default {
             >.row3 {
                 height: px(455);
 
-                &.作案手段 {
+                &.MeansOfCrime {
                     padding: 0 px(24);
 
                 }
             }
         }
 
-        .年龄段,
-        .案发类型,
-        .案发街道,
-        .作案手段 {
+        .ageGroup,
+        .typeOfIncident,
+        .streetOfCrime,
+        .MeansOfCrime {
             height: px(363);
             display: flex;
             flex-direction: column;

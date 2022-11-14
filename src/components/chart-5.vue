@@ -1,5 +1,5 @@
 <template>
-  <div class=" bordered 战果">
+  <div class=" bordered resultsOfBattle">
     <h2>往年战果数对比</h2>
     <table>
       <thead>
@@ -84,7 +84,7 @@
 }
 
 
-.战果 {
+.resultsOfBattle {
   height: px(362);
   display: flex;
   flex-direction: column;

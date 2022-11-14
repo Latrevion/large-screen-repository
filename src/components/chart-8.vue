@@ -1,5 +1,5 @@
 <template>
-  <div class="年龄段-图2">
+  <div class="ageGroup-img2">
     <div class="main">
       <div class="chart8" />
       <div class="text">年龄段</div>
@@ -83,7 +83,7 @@ export default {
 <style lang="scss" scoped>
 @import '../views/_helper.scss';
 
-.年龄段-图2 {
+.ageGroup-img2 {
   flex: 1;
   display: flex;
   flex-direction: column;

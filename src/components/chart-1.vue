@@ -1,5 +1,5 @@
 <template>
-    <div class="bordered 管辖统计">
+    <div class="bordered manageStatistics">
         <h2>案发派出所管辖统计</h2>
         <div class="chart"></div>
     </div>
@@ -149,7 +149,7 @@ export default {
 }
 
 
-.管辖统计 {
+.manageStatistics {
     height: px(315);
     display: flex;
     flex-direction: column;

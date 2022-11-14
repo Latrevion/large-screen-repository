@@ -1,5 +1,5 @@
 <template>
-  <div class="年龄段-图3">
+  <div class="ageGroup-img3">
     <h3>犯罪年龄趋势图</h3>
     <div class="chart9">
     </div>
@@ -110,7 +110,7 @@ export default {
 <style lang="scss" scoped>
 @import '../views/_helper.scss';
 
-.年龄段-图3 {
+.ageGroup-img3 {
   flex: 1;
   display: flex;
   flex-direction: column;

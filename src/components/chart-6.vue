@@ -1,5 +1,5 @@
 <template>
-    <div class="bordered 籍贯">
+    <div class="bordered native-place">
         <h2>全国犯罪人员籍贯分布地</h2>
 
         <span class='text'>实时监控中</span>
@@ -125,7 +125,7 @@ export default {
 <style lang="scss" scoped>
 @import "../views/_helper.scss";
 
-.bordered.籍贯 {
+.bordered.native-place {
     border: 1px solid #0764bc;
     border-radius: 4px;
     position: relative;
@@ -164,7 +164,8 @@ export default {
     }
 
     .radar {
-        background: -webkit-radial-gradient(center,
+        background: -webkit-radial-gradient(
+                center,
                 #0a5299 0%,
                 rgba(32, 255, 77, 0) 75%),
             -webkit-repeating-radial-gradient(rgba(32, 255, 77, 0) 5.8%, rgba(32,
@@ -251,7 +252,7 @@ export default {
 
 
 
-.籍贯 {
+.native-place {
     height: px(750);
     background: #020310;
     display: flex;
