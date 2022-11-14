@@ -10,7 +10,7 @@ import * as echarts from 'echarts';
 import eventBus from '../assets/js/eventBus.js';
 const px = (n) => { return n / 2420 * pageWidth }
 const data = [
-  { value: 0.08, name: '东岗路' },
+  { value: 0.08, name: '天水路' },
   { value: 0.06, name: '段家滩' },
   { value: 0.11, name: '雁北' },
   { value: 0.09, name: '五泉山' },
@@ -18,7 +18,7 @@ const data = [
   { value: 0.06, name: '庆阳路' },
   { value: 0.08, name: '武都路' },
   { value: 0.08, name: '酒泉路' },
-  { value: 0.08, name: '天水路' },
+  { value: 0.08, name: '东岗路' },
 ];
 export default {
   data() {
@@ -31,7 +31,6 @@ export default {
     let that =this
     eventBus.$on('commentOk', function (data) {
       that.data = data
-      console.log(that.data)
       that.initChart(that.data)
     })
   },
