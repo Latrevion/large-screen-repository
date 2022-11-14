@@ -6,7 +6,7 @@
 import * as echarts from 'echarts';
 const px = (n) => { return n / 2420 * pageWidth }
 const data = [
-  { value: 0.08, name: '东岗路' },
+  { value: 0.08, name: '天水路' },
   { value: 0.06, name: '段家滩' },
   { value: 0.11, name: '雁北' },
   { value: 0.09, name: '五泉山' },
@@ -14,7 +14,7 @@ const data = [
   { value: 0.06, name: '庆阳路' },
   { value: 0.08, name: '武都路' },
   { value: 0.08, name: '酒泉路' },
-  { value: 0.08, name: '天水路' },
+  { value: 0.08, name: '东岗路' },
 ];
 export default {
   data() {
@@ -23,10 +23,27 @@ export default {
     }
   },
   mounted() {
-    this.initChart()
+    this.initChart(this.data)
+    this.timer = setInterval(() => {
+      this.data = [
+        { value: Math.random() * 0.05 + 0.08, name: '天水路' },
+        { value: 0.06, name: '段家滩' },
+        { value: Math.random() * 0.05 + 0.11, name: '雁北' },
+        { value: Math.random() * 0.05 +0.09, name: '五泉山' },
+        { value: Math.random() * 0.05 +0.12, name: '中山路' },
+        { value: Math.random() * 0.05 + 0.06, name: '庆阳路' },
+        { value: 0.08, name: '武都路' },
+        { value: Math.random() * 0.05 + 0.08, name: '酒泉路' },
+        { value: 0.08, name: '东岗路' },
+      ]
+      this.initChart(this.data)
+    }, 3000)
+  },
+  beforeDestroy() {
+    clearInterval(this.timer)
   },
   methods: {
-    initChart() {
+    initChart(data) {
       var myChart = echarts.init(document.querySelector('.chart13'));
       // 绘制图表
       myChart.setOption({
