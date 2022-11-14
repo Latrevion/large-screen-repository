@@ -4,6 +4,7 @@
 </template>
 <script>
 import * as echarts from 'echarts';
+import eventBus from '../assets/js/eventBus.js';
 const px = (n) => { return n / 2420 * pageWidth }
 const data = [
   { value: 0.08, name: '天水路' },
@@ -26,16 +27,19 @@ export default {
     this.initChart(this.data)
     this.timer = setInterval(() => {
       this.data = [
-        { value: Math.random() * 0.05 + 0.08, name: '天水路' },
+        { value: (Number((Math.random() *0.05))*100 + 0.08*100).toFixed(0)/100, name: '天水路' },
         { value: 0.06, name: '段家滩' },
-        { value: Math.random() * 0.05 + 0.11, name: '雁北' },
-        { value: Math.random() * 0.05 +0.09, name: '五泉山' },
-        { value: Math.random() * 0.05 +0.12, name: '中山路' },
-        { value: Math.random() * 0.05 + 0.06, name: '庆阳路' },
+        { value: (Number((Math.random() * 0.05)*100 + 0.11*100).toFixed(0))/100, name: '雁北' },
+        { value: (Number((Math.random() * 0.05)*100 + 0.09*100).toFixed(0))/100, name: '五泉山' },
+        { value: (Number((Math.random() * 0.05)*100 + 0.12*100).toFixed(0))/100, name: '中山路' },
+        { value: (Number((Math.random() * 0.05)*100 + 0.06*100).toFixed(0))/100, name: '庆阳路' },
         { value: 0.08, name: '武都路' },
-        { value: Math.random() * 0.05 + 0.08, name: '酒泉路' },
+        {
+          value: (Number((Math.random() * 0.05)*100 + 0.08*100).toFixed(0))/100, name: '酒泉路'
+        },
         { value: 0.08, name: '东岗路' },
       ]
+      eventBus.$emit('commentOk', this.data)
       this.initChart(this.data)
     }, 3000)
   },

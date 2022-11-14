@@ -7,6 +7,7 @@
 </template>
 <script>
 import * as echarts from 'echarts';
+import eventBus from '../assets/js/eventBus.js';
 const px = (n) => { return n / 2420 * pageWidth }
 const data = [
   { value: 0.08, name: '东岗路' },
@@ -26,10 +27,16 @@ export default {
     }
   },
   mounted() {
-    this.initChart()
+    this.initChart(this.data)
+    let that =this
+    eventBus.$on('commentOk', function (data) {
+      that.data = data
+      console.log(that.data)
+      that.initChart(that.data)
+    })
   },
   methods: {
-    initChart() {
+    initChart(data) {
       var myChart = echarts.init(document.querySelector('.chart12'));
       // 绘制图表
       myChart.setOption({
@@ -57,7 +64,7 @@ export default {
           itemWidth: px(10),
           itemHeight: px(10),
           formatter(name) {
-            const value = data.find(i => i.name === name)?.value * 100 + '%';
+            const value = (data.find(i => i.name === name)?.value* 100).toFixed(0) + '%';
             return name + ' ' + value;
           }
         },
@@ -68,7 +75,7 @@ export default {
             radius: '80%',
             label: { show: false },
             labelLine: { show: false },
-            data: data,
+            data: data  ,
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
