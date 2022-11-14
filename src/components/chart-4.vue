@@ -48,6 +48,9 @@ export default {
             this.initChart(this.data)
         },3000)
     },
+    beforeDestroy() {
+        clearInterval(this.timer)
+    },
     methods: {
         initChart(data) {
             var myChart = echarts.init(document.querySelector('.chart4'));
